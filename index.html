@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio - Gestión de Inventario</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #333;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .menu a {
+      text-decoration: none;
+      flex: 1 1 calc(33.333% - 30px);
+    }
+    .menu button {
+      width: 100%;
+      padding: 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+    }
+    .menu button:hover {
+      background-color: #0056b3;
+    }
+    @media (max-width: 600px) {
+      .menu a {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gestión de Inventario</h1>
+    <p>Bienvenido al sistema de gestión de dispositivos</p>
+  </header>
+
+  <main>
+    <h2>Selecciona una categoría:</h2>
+    <div class="menu">
+      <a href="C:\Users\npioli\Inventario Web\Notebooks\notebooks.html"><button>Notebooks</button></a>
+      <a href="C:\Users\npioli\Inventario Web\Auriculares\auriculares.html"><button>Auriculares</button></a>
+      <a href="C:\Users\npioli\Inventario Web\Camaras\camaras.html"><button>Cámaras</button></a>
+      <a href="C:\Users\npioli\Inventario Web\Impresoras\impresoras.html"><button>Impresoras</button></a>
+      <a href="C:\Users\npioli\Inventario Web\Monitores\monitores.html"><button>Monitores</button></a>
+      <a href="C:\Users\npioli\Inventario Web\Proyectores\proyectores.html"><button>Proyectores</button></a>
+      <a href="C:\Users\npioli\Inventario Web\EnStock\enstock.html"><button>Equipos en Stock</button></a>
+      <a href="C:\Users\npioli\Inventario Web\EnReparacion\enreparacion.html"><button>En Reparación</button></a>
+      <a href="C:\Users\npioli\Inventario Web\Robados\robados.html"><button>Robados</button></a>
+      <a href="C:\Users\npioli\Inventario Web\PerifericosRotos\perifericosrotos.html"><button>Periféricos Rotos</button></a>
+    </div>
+  </main>
+</body>
+</html>

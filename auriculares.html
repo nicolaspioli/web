@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Inventario de Auriculares</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: left;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: 0 0 30px;
+    }
+    form input, form select {
+      padding: 10px;
+      margin: 8px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    form button {
+      padding: 10px 20px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background: #007bff;
+      color: #fff;
+    }
+    .btn-borrar {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-left: 5px;
+    }
+    .btn-editar {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    #resumen-estados {
+      background: #fff;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin-left: 0;
+      margin-right: auto;
+    }
+    div a button {
+  margin: 0.5px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: bold;
+}
+div a button:hover {
+  background-color: #0056b3;
+}
+  </style>
+</head>
+<body>
+
+  <h1>Gestión de Inventario de Auriculares</h1>
+  <body>
+  <!-- Botones de navegación -->
+  <div style="text-align:center; margin-bottom: 20px;">
+    <a href="C:\Users\npioli\Inventario Web\index\index.html"><button>Inicio</button></a>
+    <a href="C:\Users\npioli\Inventario Web\Auriculares\auriculares.html"><button>Auriculares</button></a>
+    <a href="C:\Users\npioli\Inventario Web\Camaras\camaras.html"><button>Cámaras</button></a>
+    <a href="C:\Users\npioli\Inventario Web\Impresoras\impresoras.html"><button>Impresoras</button></a>
+    <a href="C:\Users\npioli\Inventario Web\Monitores\monitores.html"><button>Monitores</button></a>
+    <a href="C:\Users\npioli\Inventario Web\Proyectores\proyectores.html"><button>Proyectores</button></a>
+    <a href="C:\Users\npioli\Inventario Web\EnStock\enstock.html"><button>En Stock</button></a>
+    <a href="C:\Users\npioli\Inventario Web\EnReparacion\enreparacion.html"><button>En Reparación</button></a>
+    <a href="C:\Users\npioli\Inventario Web\Robados\robados.html"><button>Robados</button></a>
+    <a href="C:\Users\npioli\Inventario Web\PerifericosRotos\perifericosrotos.html"><button>Periféricos Rotos</button></a>
+  </div>
+
+  <form id="form-auriculares">
+    <select id="type">
+      <option value="HeadSet">HeadSet</option>
+    </select>
+    <input type="text" id="name" placeholder="Nombre" required>
+    <select id="status">
+      <option>Activo</option>
+      <option>Retirado</option>
+      <option>Eliminado</option>
+      <option>En reparación</option>
+      <option>En stock</option>
+      <option>Robados</option>
+    </select>
+    <select id="owner" required></select>
+    <select id="location">
+      <option>Bariloche</option><option>CABA</option><option>Casa</option><option>Rosario</option><option>Cordoba</option>
+      <option>Mar del Plata</option><option>Mendoza</option><option>Neuquen</option><option>Resistencia</option>
+      <option>Salta</option><option>Tucuman</option><option>Uruguay</option><option>Data Center</option>
+      <option>Oficina Directores</option><option>Oficina Gerentes</option><option>Sala Aconcagua (living)</option>
+      <option>Sala Condor</option><option>Sala Directorio</option><option>Salon 5to piso</option><option>Terraza</option>
+    </select>
+    <select id="manufacturer">
+      <option>Acer</option><option>Asus</option><option>Dell</option><option>Genius</option><option>GIGABYTE</option>
+      <option>Hewlett-Packard</option><option>Intel Corporation</option><option>Jabra</option><option>Lenovo</option>
+      <option>LG Electronics</option><option>Logitech</option><option>Microsoft</option><option>Noga</option>
+      <option>OKI</option><option>Philips</option><option>Poly Inc</option><option>RCA</option><option>Samsung</option>
+      <option>Toshiba Corporation</option><option>ViewSonic Corporation</option><option>VMware</option>
+    </select>
+    <select id="storage">
+      <option>32 GB</option><option>111.8 GB</option><option>135 GB</option><option>223.6 GB</option><option>238.5 GB</option>
+      <option>262 GB</option><option>267.3 GB</option><option>447.1 GB</option><option>465.8 GB</option><option>476.9 GB</option>
+      <option>931.5 GB</option><option>1.14 TB</option>
+    </select>
+    <select id="model">
+      <option>300E4A/300E5A/300E7A</option><option>Blackwire 3325</option><option>DHE-8009</option><option>Evolve 30 Duo</option>
+      <option>H110M-H</option><option>HP 240 G6 Notebook PC</option><option>HP Notebook</option><option>Hyper- V UEFI Release v4.1</option>
+      <option>H390</option><option>Inspiron 14 5410</option><option>Inspiron 15 3511</option><option>Inspiron 3493</option>
+      <option>J50874-313</option><option>J72753-303</option><option>K120</option><option>KM-8100</option><option>Latitude 3410</option>
+      <option>Latitude 5400</option><option>Latitude 7420</option><option>LuxeMate i200</option><option>M170</option>
+      <option>NKB-78033</option><option>None</option><option>Pavilion x360 Convertible</option><option>Q304UAK</option>
+      <option>SlimStar 110</option><option>System Product Name</option><option>ThinkPad E14 Gen 2</option><option>UX410UAK</option>
+      <option>Vostro 14 5410</option><option>Vostro 3490</option><option>Vostro 5402</option><option>X55LAB</option>
+      <option>21M38A</option><option>19M38A</option>
+    </select>
+    <button type="submit" id="btn-submit">Agregar Auricular</button>
+  </form>
+
+  <table id="tabla-inventario">
+    <thead>
+      <tr>
+        <th>Type</th><th>Name</th><th>Status</th><th>Owner</th><th>Location</th><th>Manufacturer</th><th>Total Storage</th><th>Model</th><th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div id="resumen-estados"></div>
+
+  <script>
+    const form = document.getElementById('form-auriculares');
+    const tabla = document.getElementById('tabla-inventario').getElementsByTagName('tbody')[0];
+    const ownerSelect = document.getElementById('owner');
+    const resumenDiv = document.getElementById('resumen-estados');
+    const submitButton = document.getElementById('btn-submit');
+
+    const owners = ["Agencia Salta", "Agencia Tucuman", "Agustin de Vedia", "Alicia Salica", "Ana Paula Varas", "Antonio De Vedia", "Armando Fontana", "Brenda Tedesco", "Claudia Valdez", "Comunidad cordoba", "Cristian Schwerdtfeger", "Dalma Guione", "Daniela Rubil", "Daniel Castellucci", "Departamento de Vigilancia", "Directorio", "Emanuel Genovese", "Emilce Garcete Mendez", "Emilia Haurie", "Estefania Aguirre", "Federico Ertola", "Fernando Napoli", "Fernando Panno", "Florencia Martinez", "Florencia Olote", "Gabriel Mazzotta", "Gaston Alvarez", "Gimena Guerrero", "Giselle Kraus", "Hector Rossini", "Hernan Prebisch", "Hisvery Barrios", "Javier Gonzalez", "Joel Avalos", "Jose De Vedia", "Juan Carlos Magariños", "Julian Tamoni", "Julieta Brarda", "Karen Tartaruca", "Karina Barrionuevo", "Laura Montanile", "Leandra Valdez", "Leandro Da Costa", "Luis Badalucco", "Luis Cabana", "Mantenimiento Cauciones", "Marcela Morales", "Marcelo Santillan", "Maria del Valle Ahumada", "Mariano Castellucci", "Mariel Gomez", "Mariela Luciani", "Mauricio Monteros", "Mauricio Scarlata", "Melanie Cirigliano", "Mercedes Taberna", "Micaela De Vedia", "Miguel Castillo", "Monica Lanciotti", "Nancy Aristu", "Nicolas Guaman", "Nicolas Pioli", "Pablo Alcacer", "Pablo Moine", "Pedro Garcia", "Pilar Noguer", "Ricardo Falci", "Ricardo Giacoboni", "Rocio Cabrera", "Rodrigo Vascón", "Rosana Berruezo", "Santiago Botella", "Santiago De Vedia", "Santiago Livieri", "Santiago Toribio", "Sebastian Amadori", "Sigrid Taina", "Silvia Cornejo", "Sofia Maria Garcia Peña", "Valeria Bulacio", "Vanina Alegre", "Victoria Montico", "Yanina Derbunovich", "Yesica Geraldi", "Sala Aconcagua", "Sala Condor", "Terraza Cauciones"];
+
+    owners.forEach(owner => {
+      const option = document.createElement('option');
+      option.value = owner;
+      option.textContent = owner;
+      ownerSelect.appendChild(option);
+    });
+
+    let editIndex = null;
+
+    function guardarEnLocalStorage() {
+      const rows = [...tabla.rows].map(row => ({
+        type: row.cells[0].innerText,
+        name: row.cells[1].innerText,
+        status: row.cells[2].innerText,
+        owner: row.cells[3].innerText,
+        location: row.cells[4].innerText,
+        manufacturer: row.cells[5].innerText,
+        storage: row.cells[6].innerText,
+        model: row.cells[7].innerText
+      }));
+      localStorage.setItem('inventarioAuriculares', JSON.stringify(rows));
+    }
+
+    function cargarDesdeLocalStorage() {
+      const data = JSON.parse(localStorage.getItem('inventarioAuriculares') || '[]');
+      data.forEach(item => agregarFila(item));
+    }
+
+    function actualizarResumenEstados() {
+      const resumen = {};
+      for (let row of tabla.rows) {
+        const estado = row.cells[2].innerText;
+        resumen[estado] = (resumen[estado] || 0) + 1;
+      }
+
+      let html = '<h3>Resumen por Estado</h3><ul>';
+      for (let estado in resumen) {
+        html += `<li><strong>${estado}:</strong> ${resumen[estado]}</li>`;
+      }
+      html += '</ul>';
+      resumenDiv.innerHTML = html;
+    }
+
+    function agregarFila(data) {
+      const fila = tabla.insertRow();
+      fila.innerHTML = `
+        <td>${data.type}</td><td>${data.name}</td><td>${data.status}</td><td>${data.owner}</td><td>${data.location}</td>
+        <td>${data.manufacturer}</td><td>${data.storage}</td><td>${data.model}</td>
+        <td>
+          <button class="btn-editar">Editar</button>
+          <button class="btn-borrar">Borrar</button>
+        </td>
+      `;
+
+      fila.querySelector('.btn-borrar').addEventListener('click', () => {
+        fila.remove();
+        guardarEnLocalStorage();
+        actualizarResumenEstados();
+      });
+
+      fila.querySelector('.btn-editar').addEventListener('click', () => {
+        editIndex = fila.rowIndex - 1; // fila.rowIndex incluye el encabezado
+        document.getElementById('type').value = fila.cells[0].innerText;
+        document.getElementById('name').value = fila.cells[1].innerText;
+        document.getElementById('status').value = fila.cells[2].innerText;
+        document.getElementById('owner').value = fila.cells[3].innerText;
+        document.getElementById('location').value = fila.cells[4].innerText;
+        document.getElementById('manufacturer').value = fila.cells[5].innerText;
+        document.getElementById('storage').value = fila.cells[6].innerText;
+        document.getElementById('model').value = fila.cells[7].innerText;
+        submitButton.textContent = 'Actualizar Auricular';
+      });
+    }
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const datos = {
+        type: document.getElementById('type').value,
+        name: document.getElementById('name').value.trim(),
+        status: document.getElementById('status').value,
+        owner: document.getElementById('owner').value,
+        location: document.getElementById('location').value,
+        manufacturer: document.getElementById('manufacturer').value,
+        storage: document.getElementById('storage').value,
+        model: document.getElementById('model').value
+      };
+
+      if(editIndex !== null) {
+        // Actualizar fila existente
+        const fila = tabla.rows[editIndex];
+        fila.cells[0].innerText = datos.type;
+        fila.cells[1].innerText = datos.name;
+        fila.cells[2].innerText = datos.status;
+        fila.cells[3].innerText = datos.owner;
+        fila.cells[4].innerText = datos.location;
+        fila.cells[5].innerText = datos.manufacturer;
+        fila.cells[6].innerText = datos.storage;
+        fila.cells[7].innerText = datos.model;
+
+        submitButton.textContent = 'Agregar Auricular';
+        editIndex = null;
+      } else {
+        agregarFila(datos);
+      }
+
+      form.reset();
+      guardarEnLocalStorage();
+      actualizarResumenEstados();
+    });
+
+    // Carga inicial
+    cargarDesdeLocalStorage();
+    actualizarResumenEstados();
+
+  </script>
+
+</body>
+</html>
